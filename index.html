@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pour ma patate 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--question-->
+<section class="screen" id="s1">
+  <svg class="duo" viewBox="0 0 150 130" aria-hidden="true">
+    <g class="b1"><path d="M60 110 C20 85 10 60 25 45 C38 32 55 38 60 50 C65 38 82 32 95 45 C110 60 100 85 60 110Z" fill="#F0475E"/>
+      <circle cx="47" cy="62" r="4" fill="#3B1A24"/><circle cx="72" cy="62" r="4" fill="#3B1A24"/><circle cx="40" cy="72" r="5" fill="#FF9AAE"/><circle cx="80" cy="72" r="5" fill="#FF9AAE"/>
+      <path d="M53 72 Q60 78 66 72" stroke="#3B1A24" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+    <g class="b2"><path d="M100 115 C72 97 66 80 76 70 C85 61 96 65 100 73 C104 65 115 61 124 70 C134 80 128 97 100 115Z" fill="#FFFFFF" stroke="#F0475E" stroke-width="3"/>
+      <circle cx="92" cy="84" r="3" fill="#3B1A24"/><circle cx="108" cy="84" r="3" fill="#3B1A24"/><path d="M96 92 Q100 96 104 92" stroke="#3B1A24" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+  </svg>
+  <h1>Tu m'aimes ?</h1>
+  <div class="row">
+    <button class="btn" id="oui">Oui</button>
+    <button class="btn" id="non">Non</button>
+  </div>
+</section>
+
+<!--coeur chargement-->
+<section class="screen hidden"id="s2">
+  <div class="loader" aria-label="Chargement">♥</div>
+  <div class="shadow"></div>
+</section>
+
+<!--bocal de coeur-->
+<section class="screen hidden" id="s3">
+  <h1>Un bocal de cœurs pour toi</h1>
+  <button class="jar" id="jar" aria-label="Piocher un cœur dans le bocal">
+    <div class="lid"></div>
+    <div class="body" id="jarBody"></div>
+    <div class="tag">pour Julien ♡</div>
+  </button>
+  <p class="hint" id="hint">Touche le bocal pour piocher un cœur</p>
+</section>
+
+<!--petits mots-->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Petit mot">
+  <div class="letter">
+    <div class="big">♥</div>
+    <p id="msg"></p>
+    <div class="sign">— Eddie</div>
+    <div class="btns">
+      <button class="btn" id="next">Un autre</button>
+      <button class="btn ghost" id="close">Refermer</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

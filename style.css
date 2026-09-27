@@ -1,0 +1,61 @@
+:root{
+  --bg:#FFD9DF; --ink:#3B1A24; --red:#F0475E; --deep:#C9243F; --paper:#FFF9F6;
+  --glass:rgba(255,255,255,.4); --rim:rgba(201,36,63,.35);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;overflow:hidden;text-align:center;touch-action:manipulation}
+
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;padding:1.5rem;transition:opacity .5s}
+.hidden{opacity:0;pointer-events:none}
+h1{font-size:clamp(1.9rem,8vw,2.8rem);font-weight:700}
+
+.btn{font-family:inherit;font-weight:700;font-size:1.1rem;border:none;border-radius:999px;padding:.6rem 1.6rem;background:var(--red);color:#fff;cursor:pointer;box-shadow:0 4px 0 var(--deep);transition:transform .2s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--deep)}
+.btn:focus-visible{outline:3px dashed var(--deep);outline-offset:4px}
+.btn.ghost{background:transparent;color:var(--deep);box-shadow:inset 0 0 0 2px var(--deep)}
+.row{display:flex;gap:1rem;align-items:center;justify-content:center;min-height:60px}
+#non{position:relative;transition:left .25s,top .25s}
+#non.free{position:fixed;z-index:5}
+
+/* Les deux petits cœurs */
+.duo{width:150px;height:130px}
+.duo .b1{animation:wobble 2s ease-in-out infinite;transform-origin:60px 90px}
+.duo .b2{animation:wobble 2s ease-in-out infinite reverse;transform-origin:95px 90px}
+@keyframes wobble{50%{transform:rotate(-5deg)}}
+
+/* Cœur qui bat */
+.loader{font-size:5rem;color:var(--red);animation:beat .8s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.25)}60%{transform:scale(.95)}}
+.shadow{width:60px;height:10px;border-radius:50%;background:rgba(0,0,0,.12);animation:sh .8s ease-in-out infinite}
+@keyframes sh{30%{transform:scale(.7)}}
+
+/* Bocal */
+.jar{position:relative;width:min(68vw,250px);aspect-ratio:3/4;cursor:pointer;border:none;background:none;padding:0}
+.jar:focus-visible{outline:3px dashed var(--deep);outline-offset:8px;border-radius:30px}
+.lid{position:absolute;top:0;left:18%;width:64%;height:11%;background:var(--red);border-radius:12px 12px 4px 4px;z-index:3;box-shadow:inset 0 -6px 0 var(--deep)}
+.body{position:absolute;top:13%;left:4%;right:4%;bottom:0;border-radius:28% 28% 22% 22%/14% 14% 12% 12%;background:var(--glass);border:3px solid var(--rim);overflow:hidden;z-index:2}
+.body::before{content:"";position:absolute;top:8%;left:10%;width:9%;height:60%;border-radius:20px;background:rgba(255,255,255,.6);z-index:5}
+.h{position:absolute;line-height:1;transition:transform .6s ease,opacity .6s}
+.h.gone{transform:translateY(-260%) scale(.3)!important;opacity:0}
+.tag{position:absolute;bottom:16%;left:50%;transform:translateX(-50%) rotate(-4deg);z-index:4;background:var(--paper);padding:.25rem .9rem;border-radius:6px;font-family:'Caveat',cursive;font-size:1.4rem;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.hint{font-size:1rem;opacity:.75}
+
+/* Petit mot */
+.overlay{position:fixed;inset:0;background:rgba(59,26,36,.35);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.overlay.open{opacity:1;pointer-events:auto}
+.letter{background:var(--paper);width:min(90vw,370px);padding:2.4rem 1.6rem 1.5rem;border-radius:20px;position:relative;transform:scale(.5) rotate(-3deg);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.overlay.open .letter{transform:scale(1) rotate(-1deg)}
+.letter .big{position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:3rem;color:var(--red)}
+.letter p{font-family:'Caveat',cursive;font-size:clamp(1.7rem,6.5vw,2.1rem);line-height:1.25;min-height:90px;display:flex;align-items:center;justify-content:center}
+.sign{font-family:'Caveat',cursive;text-align:right;font-size:1.4rem;margin-top:.4rem}
+.btns{display:flex;gap:.7rem;justify-content:center;margin-top:1.1rem}
+
+/* Petits cœurs qui s'envolent */
+.pop{position:fixed;pointer-events:none;font-size:1.5rem;color:var(--red);animation:up 1.3s ease-out forwards;z-index:20}
+@keyframes up{to{transform:translateY(-150px) scale(1.5);opacity:0}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
