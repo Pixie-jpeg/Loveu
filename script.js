@@ -3,13 +3,13 @@ const MOTS = [
   "Merci d'être toi, tout simplement.",
   "Mon moment préféré, c'est quand je te retrouve.",
   "Je suis tellement fier de toi.",
-  "Je t'aime plus qu'hier et bien moins que demain."
-  "L'amour tient dans trois lettres : toi."
-  "Tes baisers sont ma plus belle récompense après une longue journée."
-  "Je t'aime jusqu'à la lune, aller et retour"
-  "Plus je te connais et plus je t'aime."
-  "Avec toi, je veux tout vivre."
-  "Ton nom est mon mot préféré."
+  "Je t'aime plus qu'hier et bien moins que demain.",
+  "L'amour tient dans trois lettres : toi.",
+  "Tes baisers sont ma plus belle récompense après une longue journée.",
+  "Je t'aime jusqu'à la lune, aller et retour",
+  "Plus je te connais et plus je t'aime.",
+  "Avec toi, je veux tout vivre.",
+  "Ton nom est mon mot préféré.",
   "Tu es mon soleil, ma lune et toutes mes étoiles."
 ];
 
